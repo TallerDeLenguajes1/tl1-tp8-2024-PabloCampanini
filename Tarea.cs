@@ -27,7 +27,7 @@ public class Tarea
     //Constructor
     public Tarea(int tareaId, string descripcion, int duracion)
     {
-        this.TareaID = tareaId;
+        TareaID = tareaId;
         this.Descripcion = descripcion;
         this.Duracion = duracion;
     }
@@ -35,8 +35,6 @@ public class Tarea
     //Metodos
     public void MostrarTareasPendientes()
     {
-        Console.WriteLine("\n\t\t*----- Lista de Tareas Pendientes -----");
-
         Console.WriteLine($"\nTarea {tareaId}:");
 
         Console.WriteLine($"\t\tDescripcion: {Descripcion}");
@@ -44,11 +42,14 @@ public class Tarea
     }
     public void MostrarTareasRealizadas()
     {
-        Console.WriteLine("\n\t\t*----- Lista de Tareas Realizadas -----");
-
         Console.WriteLine($"\nTarea {tareaId}:");
 
         Console.WriteLine($"\t\tDescripcion: {Descripcion}");
         Console.WriteLine($"\t\tDuracion: {Duracion}");
+    }
+
+    public bool ContenidoDescripcion(string PalabraClave)
+    {
+        return Descripcion.Contains(PalabraClave, StringComparison.OrdinalIgnoreCase);
     }
 }
